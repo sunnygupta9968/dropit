@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: dropit
+
+  data:
+    redis:
+      url: ${REDIS_URL:redis://${REDIS_HOST:localhost}:${REDIS_PORT:6379}}
+
+  servlet:
+    multipart:
+      max-file-size: ${MAX_FILE_SIZE:1GB}
+      max-request-size: ${MAX_REQUEST_SIZE:1GB}
+
+app:
+  upload-dir: ${UPLOAD_DIR:uploads}
+  file-expiry-minutes: ${FILE_EXPIRY_MINUTES:10}
+
+logging:
+  level:
+    me.paulschwarz.springdotenv: DEBUG
